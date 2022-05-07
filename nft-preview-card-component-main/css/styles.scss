@@ -1,0 +1,168 @@
+$colors:(softBlue: hsl(215, 51%, 70%), softCyan: hsl(178, 100%, 50%), mainDarkBlue: hsl(217, 54%, 11%), cardDarkBlue: hsl(216, 50%, 16%), lineDarkBlue: hsl(215, 32%, 27%), neutralWhite: hsl(0, 0%, 100%)); 
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.125rem;
+	background-color: map-get($colors, mainDarkBlue);
+    padding: 1.1rem 2rem 1.5rem;
+}
+
+footer{
+    max-width: 20rem;
+    margin: 0 auto;
+    padding: .5rem;
+    text-align: center;
+    line-height: 1.5;
+}
+
+a{
+    text-decoration: none;
+    color: map-get($colors, softCyan);
+}
+
+.attribution{
+    &__text{
+        color: map-get($colors, neutralWhite);
+        font-weight: 400;
+    }   
+}
+
+.nft-card{
+    border-radius: .625rem;
+    background-color: map-get($colors, cardDarkBlue);
+    padding: 1.4rem;
+    max-width: 17.9rem;
+    margin: 0 auto;
+
+.item{
+    position: relative;
+    overflow: hidden;
+    
+    &::after{
+        content: "";
+        display: block;
+        border-radius: .4375rem;
+        opacity: 0.4;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 15.0875rem;
+    }
+
+    &:hover::after{
+        border-radius: .4375rem;
+        background-color: map-get($colors, softCyan);
+    }
+
+    &:hover .nft-card__overlay{
+        opacity: 1;
+    }
+}
+    &__image{
+        border-radius: .4375rem;
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+
+    &__overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        opacity: 0;
+        width: 100%;
+        border-radius: .4375rem;
+    }
+
+
+    &__header{
+        color: map-get($colors, neutralWhite);
+        font-weight: 600;
+        font-size: 1.125rem;
+        margin-top: .9375rem;
+        margin-bottom: .875rem;
+        width: 9.5rem;
+    }
+
+    &__header:hover{
+        color: map-get($colors,softCyan);
+    }
+
+    &__text{
+        color: map-get($colors, softBlue);
+        font-size: .875rem;
+        font-weight: 300;
+        line-height: 1.6;
+        padding-right: .3125rem;
+        margin-bottom: .875rem;
+    }
+
+    &__flex{
+        border-bottom: 1px solid hsl(215, 32%, 27%);
+        display: flex;
+        justify-content: space-between;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: .8125rem;
+        margin-bottom: .9375rem;
+
+    }
+
+    &__ethereum{
+        display: flex;
+        font-size: .8125rem;
+        font-weight: 600;
+        gap: .3125rem;
+        color: map-get($colors,softCyan);
+
+        &--size{
+            height: .9375rem;
+        }
+    }
+
+    &__time{
+        display: flex;
+        gap: .3125rem;
+        font-size: 0.8438rem;
+        font-weight: 400;
+        color: map-get($colors, softBlue);
+        align-self: flex-start;
+    }
+
+    &__profile{
+        display: flex;
+        font-size: .8375rem;
+        align-items: center;
+        color: map-get($colors, softBlue);
+
+        &--size{
+            border-radius: 50%;
+            border: .0938rem solid white; 
+            height: 1.5625rem;
+            width: 1.5625rem;
+            margin-right: 1rem;
+        }
+        
+        &--color{
+            color: map-get($colors, neutralWhite);
+            margin-left: .1875rem;
+        }
+
+        &--color:hover{
+            color: map-get($colors,softCyan);
+        }
+}
+}
